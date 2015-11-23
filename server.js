@@ -3,13 +3,18 @@
 var bodyParser = require('body-parser');
 var connect = require('connect');
 var debug = require('debug')('wspost:server');
+var fs = require('fs');
 var http = require('http');
 var jwt = require('jsonwebtoken');
 var WebSocketServer = require('ws').Server;
 
-function receive(req, resp) {
+function broadcast(req, resp) {
   var channel = jwt.verify(req.url.slice(1), server.secret).channel;
   resp.end(wss.broadcast(req.body, channel).toString());
+}
+
+function example(req, resp) {
+  resp.end(fs.readFileSync('example.html'));
 }
 
 var onConnection = function (client) {
@@ -51,7 +56,8 @@ app.use(bodyParser.urlencoded({
   extended: false,
 }));
 app.use(bodyParser.json());
-app.use(receive);
+app.use('/broadcast', broadcast);
+app.use('/example.html', example);
 
 var server = http.createServer(app);
 

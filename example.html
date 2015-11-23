@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>wspost</title>
+  </head>
+  <body>
+    <h1>wspost</h1>
+    <ul id="messages"></ul>
+    <script type="text/javascript">
+      var channel = 'example';
+      var ws = new WebSocket('ws://' + window.document.location.host + '/' + channel);
+      var messages = document.getElementById('messages');
+      ws.onmessage = function(message) {
+        var li = document.createElement('li');
+        li.textContent = message.data;
+        messages.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
