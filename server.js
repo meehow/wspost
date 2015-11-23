@@ -14,7 +14,7 @@ function broadcast(req, resp) {
 }
 
 function example(req, resp) {
-  resp.end(fs.readFileSync('example.html'));
+  resp.end(fs.readFileSync(__dirname + '/example.html'));
 }
 
 var onConnection = function (client) {

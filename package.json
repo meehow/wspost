@@ -1,6 +1,6 @@
 {
   "name": "wspost",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Broadcasts data received via HTTP POST to all clients connected to Web Sockets",
   "main": "server.js",
   "dependencies": {
