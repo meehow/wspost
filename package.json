@@ -1,0 +1,38 @@
+{
+  "name": "wspost",
+  "version": "0.1.0",
+  "description": "Broadcasts data received via HTTP POST to all clients connected to Web Sockets",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "commander": "^2.9.0",
+    "connect": "^3.4.0",
+    "debug": "^2.2.0",
+    "jsonwebtoken": "^5.4.1",
+    "ws": "^0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "bin": {
+    "wspost": "./bin/wspost.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meehow/wspost.git"
+  },
+  "keywords": [
+    "ws",
+    "websocket",
+    "broadcast",
+    "push"
+  ],
+  "author": "meehow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meehow/wspost/issues"
+  },
+  "homepage": "https://github.com/meehow/wspost#readme"
+}
